@@ -19,7 +19,20 @@
         font-size: 2rem;
         line-height: 1.2;
     }
-}
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "image-1 image-2"
+        "list tag";
+
+    }
+
+    .title { grid-area: title; } 
+    .image-1 { grid-area: image-1; } 
+    .image-2 { grid-area: image-2; } 
+    .list { grid-area: list; } 
+    .tag { grid-area: tag; }
 
 .card {
     border-radius: var(--border-radius);
@@ -29,6 +42,8 @@
     &:not(:has(img)) {
         padding: var(--spacing-base);
     }
+
+    container-type: inline-size;
 }
 
 h2 {
@@ -41,6 +56,52 @@ h2 {
 .website {
     font-size: 1.2rem;
     margin-top: auto;
+}
+
+
+@media (min-width: 600px) {
+    .bento {
+        grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+            "title title image-1"
+            "image-2 list tag";
+    }
+}
+
+/* @container (max-width: 300px) {} */
+
+@container (max-width: 300px) {
+    .card {
+        font-size: 0.8rem;
+    }
+
+    .title h2 {
+        font-size: 2rem;
+    }
+
+    .tag {
+        font-size: 1.2rem;
+    }
+}
+
+@container (min-width: 300px) and (max-width: 500px) {
+    .card {
+        font-size: 1rem;
+    }
+
+    .title h2 {
+        font-size: 3rem;
+    }
+}
+
+@container (min-width: 500px) {
+    .card {
+        font-size: 1.2rem;
+    }
+
+    .title h2 {
+        font-size: 4rem;
+    }
 }
 
 
