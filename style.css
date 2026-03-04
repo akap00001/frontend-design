@@ -9,8 +9,49 @@
     --font-heading: 1.75rem;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
 
 /* Begynd her... */
+
+body {
+    display: flex;
+    /* container-type: inline-size; */
+    gap: 1rem;
+}
+
+img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+}
+
+div:has(h1) div {
+    display: flex;
+    flex-direction: column;
+    
+}
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: teal;
+}
+
+div:has(svg) div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+svg {
+    height: 25px;
+    width: 25px;
+}
