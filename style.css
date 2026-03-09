@@ -1,4 +1,5 @@
 :root {
+    /* gråtone */
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -9,8 +10,115 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
     --gray-900: #111827;
+
+    /* typograiskskala */
+    --step--1: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
+    --step-0: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+    --step-1: clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem);
+    --step-2: clamp(1.7rem, 1.5rem + 0.8vw, 2.2rem);
+    --step-3: clamp(2.2rem, 2rem + 1vw, 3rem);
+
+    /* spacing-skala */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+
+    /* line-height */
+    --lh-text: 1.6;
+    --lh-heading: 1.2;
 }
 
 body {
     font-family: system-ui, sans-serif;
 }
+
+/* overskrifter */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: var(--lh-heading);
+    color: var(--gray-900);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+h1 {
+    font-size: var(--step-3);
+}
+h2 {
+    font-size: var(--step-2);
+}
+h3 {
+    font-size: var(--step-1);
+}
+h4 {
+    font-size: var(--step-0); 
+    color: var(--gray-800);
+}
+p {
+    margin-bottom: var(--space-2);
+    color: var(--gray-700);
+}
+
+article {
+    max-width: 65;
+    margin-inline: auto;
+    padding: var(--space-4) var(--space-2);
+    color: var(--gray-700);
+    font-size: var(--step-0);
+    line-height: var(--lh-text);
+}
+
+.text-lead {
+    font-size: var(--step--1);
+    color: var(--gray-600);
+}
+.text-small, figcaption {
+    font-size: var(--step--1);
+    color: var(--gray-500);
+}
+
+/* 
+p+h2,
+figure+h2 {
+    margin-top: var(--space-5);
+}
+
+h2+h3 {
+    margin-top: var(--space-3);
+}
+
+p+p {
+    margin-top: var(--space-1);
+}
+
+a {
+    color: var(--gray-800);
+    text-decoration: underline;
+    text-decoration-color: var(--gray-300);
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--gray-900);
+    text-decoration-color: var(--gray-500);
+}
+
+code {
+    background: var(--gray-100);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: var(--gray-800);
+}
+
+figure {
+    margin: var(--space-4) 0;
+}
+
+figcaption {
+    margin-top: var(--space-1);
+    text-align: center;
+}
+ */
