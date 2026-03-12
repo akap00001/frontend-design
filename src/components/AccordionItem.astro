@@ -75,4 +75,51 @@ const { id, question, answer, linkBlock } = props;
       }
     }
   }
+
+  summary::after {
+    content: "";
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 3s ease;
+    transform-origin: center;
+  }
+
+  details {
+    --r: 0deg;
+  }
+
+  details[open] {
+    --r: z 90deg;
+  }
+
+  summary::after {
+    transform: rotate(var(--r));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    summary::after {
+      transition: none;
+    }
+  }
+
+  /* EKSEMPEL */
+
+  /* @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+        content-visibility 1s allow-discrete,
+        opacity 1s,
+        block-size 1s;
+  }
+
+  &[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  } */
 </style>
